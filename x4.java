@@ -11,8 +11,8 @@ void setup() {
 }
 void reset() {
   r=  100;
-  g=  200;
-  b=  250;
+  g=  0;
+  b=  150;
 }
 
 
@@ -21,7 +21,9 @@ void draw() {
   background( r,g,b );
   showButton( button1X, button1Y, button1W, button1H );
   fill(100,0,0);
-  text( "Click me!", button1X+button1W/4, button1Y+button1H*2/3 );
+  text( "Click Here!", button1X+button1W/4, button1Y+button1H*2/3 );
+  fill(255,255,0);
+  text("Justin", 100, 300);
 }
 // Draw the button.
 void showButton( float x, float y, float w, float h ) {
@@ -39,10 +41,12 @@ void mousePressed() {
     counter=  counter+1;
     if (counter % 2 > 0) {
       r=  255;
-      g=  50;
-      b=  0;
+      g=  150;
+      b=  150;
     } else {
-      reset();
+      r= 0;
+      g= 150;
+      b= 100;
     }
   }
 }
