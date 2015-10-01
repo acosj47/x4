@@ -2,7 +2,7 @@
 //Making a button that changes the background color when clicked
 
 
-int x = width/2;  //button globals
+int x;  //button globals
 int y = 300;
 int w = 150;
 int h = 100;
@@ -13,6 +13,7 @@ int h = 100;
 boolean button = false;
 
 void setup(){
+  x = width/2;
   size(600, 450);
 }
 
