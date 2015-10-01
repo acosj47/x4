@@ -42,17 +42,17 @@ void draw(){
     reset();
   }
   
-  fill(0, 200, 100);
+  fill(0, 200, 100);          //Show Button 
   rect(x, y, w, h);
   
   fill(255,255,0);
   textSize(20);
-  text("Click Here!", x + 25, y+ 55);
+  text("Click Here!", x + 25, y+ 55);    // Text on Button
   fill(0);
   text("Justin Acosta", w, 100);
 }
 
-void mousePressed(){
+void mousePressed(){                   
   if (mouseX > x &&
       mouseX < x + w &&
       mouseY > y &&
