@@ -1,69 +1,48 @@
-//// Exercise 4:  click button to change background.
+//Justin Acosta
+//Making a button that changes the background color when clicked
 
-int r,g,b;
-float button1X=100, button1Y=100, button1W=80, button1H=40;
-int counter=0;
 
-//// SETUP:  size only.  Also set colors.
-void setup() {
-  size( 640, 480 );
-  reset();
+int x = width/2;  //button globals
+int y = 300;
+int w = 150;
+int h = 100;
+
+
+
+
+boolean button = false;
+
+void setup(){
+  size(600, 450);
 }
-void reset() {
-  r=  100;
-  g=  0;
-  b=  150;
-}
 
-
-//// NEXT:  button only.
-void draw() {
-  background( r,g,b );
-  showButton( button1X, button1Y, button1W, button1H );
-  fill(100,0,0);
-  textSize(12);
-  text( "Click Here!", button1X+button1W/4, button1Y+button1H*2/3 );
+void draw(){
+  if (button) {
+  background( 60, 50, 255);
+  } else{ 
+    background( 255, 200, 0);
+  }
+  
+  fill(0, 200, 100);
+  rect(x, y, w, h);
+  
   fill(255,255,0);
   textSize(20);
-  text("Justin", 100, 300);
-}
-// Draw the button.
-void showButton( float x, float y, float w, float h ) {
-  fill( 255,255,0 );
-  rect ( x,y, w,h );
+  text("Click Here!", x + 25, y+ 55);
+  fill(0);
+  text("Justin Acosta", w, 100);
 }
 
-//// HANDLERS:  keys & click
-void keyPressed() {
-  if (key == 'q') exit();
-  if (key == 'r') reset();
-}
-void mousePressed() {
-  if ( hit( mouseX,mouseY, 100,100, 50,50 ) ) {
-    counter=  counter+1;
-    if (counter % 2 > 0) {
-      r=  255;
-      g=  150;
-      b=  150;
-    } else {
-      r= 0;
-      g= 150;
-      b= 100;
-    }
-  }
+void mousePressed(){
+  if (mouseX > x &&
+      mouseX < x + w &&
+      mouseY > y &&
+      mouseY < y + h){
+   button = !button;
+      }
 }
 
-//// OTHER METHODS:  detect "hit"
-// Return true if "near"
-boolean hit( float x1, float y1, float x2, float y2, float w, float h ) {
-  boolean result;
 
-  // +++++ STUB ALWAYS RETURNS TRUE!
-  if ( abs(x1-x2) < w && abs(y1-y2)<h ) {
-    result=  true;
-  } else {
-    result=false;
-  }
 
-  return result;
-}
+
+
