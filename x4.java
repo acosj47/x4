@@ -7,6 +7,10 @@ int y = 300;
 int w = 150;
 int h = 100;
 
+float r = random(255);
+float g = random(255);
+float b = random(255);
+
 
 
 
@@ -20,6 +24,15 @@ void setup(){
 void draw(){
   if (button) {
   background( 60, 50, 255);
+  drawCircle(300, 250, 90, 60, color(r, g, b));
+  drawCircle(50, 240, 70, 70, color(r, g, b));
+  drawCircle(500, 390, 70, 70, color(r, g, b));
+  drawCircle(500, 20, 90, 70, color(r, g, b));
+  drawCircle(450, 200, 60, 70, color(r, g, b));
+  drawCircle(100, 150, 80, 60, color(r, g, b));
+
+
+
   } else{ 
     background( 255, 200, 0);
   }
@@ -43,6 +56,10 @@ void mousePressed(){
       }
 }
 
+void drawCircle(float x, float y, float w, float h, color c){
+  fill(c);
+  ellipse(x, y, w, h);
+}
 
 
 
