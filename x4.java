@@ -21,8 +21,10 @@ void draw() {
   background( r,g,b );
   showButton( button1X, button1Y, button1W, button1H );
   fill(100,0,0);
+  textSize(12);
   text( "Click Here!", button1X+button1W/4, button1Y+button1H*2/3 );
   fill(255,255,0);
+  textSize(20);
   text("Justin", 100, 300);
 }
 // Draw the button.
