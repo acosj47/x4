@@ -1,7 +1,7 @@
 //// Exercise 4:  click button to change background.
 
 int r,g,b;
-float button1X=150, button1Y=200, button1W=180, button1H=40;
+float button1X=100, button1Y=100, button1W=80, button1H=40;
 int counter=0;
 
 //// SETUP:  size only.  Also set colors.
